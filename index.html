@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(251, 242, 221);
+        }
+        button:active{
+            background-color: rgb(255, 226, 153);
+        }
+
+        /* header styling */
+        header{
+            margin-top: 10vh;
+            text-align: center;
+            font-size: 1rem;
+            padding: 1em;
+        }
+        header h1{
+            color: rgb(49, 49, 49);
+            text-transform: uppercase;
+        }
+        .underline{
+            background-color: #ffcf30;
+            height: 5px;
+            border-radius: 2px;
+            width: 10em;
+            margin: 1px auto;
+            transition:1s ;
+        }
+        header:hover .underline{
+            width: 18em;
+        }
+
+
+        /* section styling */
+        section{
+            margin: 10px auto;
+            width: 80%;
+            text-align: center;
+            font-size: 1.5rem;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            max-width: 500px;
+            background-color: #ffffff;
+            padding: 1em 1em;
+            border-radius: 1em;
+            box-shadow: 2px 2px 5px,
+                        -2px -2px 5px;
+
+        }
+
+        .head img{
+            width: 60%;
+            min-width: 180px;
+            border-radius: 50%;
+        }
+        .head i{
+            color: rgb(255, 192, 34);
+            font-size: 2.5em;
+            position: absolute;
+            margin-left: -70px;
+        }
+        section *:not(.head,i){
+            font-size: 1em;
+        }
+        section #person_name{
+            padding: 0.1em;
+            color: rgb(104, 217, 255);
+            font-size: 3rem;
+        }
+        section #job{
+            font-size: 2rem;
+            padding: 0.5em;
+            color: rgb(47, 241, 255);
+        }
+        section #info{
+            font-size: 1.3rem;
+            padding: 0.5em;
+        }
+        button{
+            font-size: 32px;
+            color: rgb(255, 183, 0);
+            border: none;
+            padding: 0.2em 0.5em ;
+            background-color: white;
+        }
+        i{
+            font-size: 3rem;
+        }
+        #random{
+            margin: 0.5em;
+            border: solid rgb(255, 183, 0) 2px;
+            border-radius: 5px;
+        }
+        header button,.new_personne label{
+            margin: 0.5em 1em;
+            font-size: 18px;
+            color: rgb(255, 183, 0);
+            padding: 0.5em 1em ;
+            background-color: white;
+            border: solid rgb(255, 183, 0) 2px;
+            border-radius: 5px;
+        }
+
+
+        /* when you will add a person to the site */
+        .new_personne #new_person_image{
+            display: none;
+        }
+        .new_personne *{
+            margin-top: 0.6em;
+            width: 100%;
+
+        }
+        .new_personne{
+            display: none;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Stupid Reviews</h1>
+        <div class="underline"></div>
+        <div>
+            <button onclick="Ajouter_personne()">ajouter personne</button>
+            <button onclick="Supprimer_personne()">supprimer personne</button>
+        </div>
+    </header>
+
+    <!-- the main  -->
+    <section>
+        <div class="head">
+            <img id="person_image" src="you.jpg" alt="image for person">
+            <i class="bi bi-chat-quote-fill"></i>
+        </div>
+        <h2 id="person_name"></h2>
+        <h2 id="job"></h2>
+        <p id="info"></p>
+
+        <div>
+            <button onclick="increase()"><i class="bi bi-arrow-left-circle-fill"></i></button>    
+            <button onclick="decrease()"><i class="bi bi-arrow-right-circle-fill"></i></button>    
+        </div>
+        <button id="random" onclick="random()">random</button>
+    </section>
+
+
+    
+    <script src="index.js"></script>
+</body>
+
+    <section class="new_personne">
+        <label for="new_person_image">enter image</label>
+        <input type="file" accept="image/*" id="new_person_image" >
+        <input type="text" id="new_person_name" placeholder="enter the name">
+        <input type="text" id="new_job" placeholder="enter the job">
+        <textarea name="" id="new_info" cols="30"  rows="10" placeholder="enter informations about this person"></textarea>
+        <input type="submit" onclick="ajouter_personne()" name="" id="">
+    </section>
+
+</html>
