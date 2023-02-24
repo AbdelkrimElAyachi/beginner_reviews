@@ -111,8 +111,12 @@ function ajouter_personne(){
     
     
     console.log(new_person);
-
-    reviews.push(new_person)
+    if(new_person.img != "" && new_person.job!="" && new_person.name !="" && new_person.text != ""){
+        reviews.push(new_person)
+    }
+    else{
+        alert("you need to enter all the ements before submitting the review")
+    }
     console.log(reviews);
 
 
